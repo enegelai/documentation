@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunk_enegelai_documentation=self.webpackChunk_enegelai_documentation||[]).push([[535],{5641:e=>{e.exports=JSON.parse('{"title":"Recent posts","items":[{"title":"Welcome","permalink":"/blog/welcome"}]}')}}]);
