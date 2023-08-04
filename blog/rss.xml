@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/">
     <channel>
         <title>Enegel.AI Blog</title>
-        <link>https://enegelai.github.io/documentation/blog</link>
+        <link>https://docs.enegel.ai/blog</link>
         <description>Enegel.AI Blog</description>
         <lastBuildDate>Wed, 02 Aug 2023 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
@@ -10,8 +10,8 @@
         <language>en</language>
         <item>
             <title><![CDATA[Welcome]]></title>
-            <link>https://enegelai.github.io/documentation/blog/welcome</link>
-            <guid>https://enegelai.github.io/documentation/blog/welcome</guid>
+            <link>https://docs.enegel.ai/blog/welcome</link>
+            <guid>https://docs.enegel.ai/blog/welcome</guid>
             <pubDate>Wed, 02 Aug 2023 00:00:00 GMT</pubDate>
             <description><![CDATA[Welcome to Enegel Changelog !]]></description>
             <content:encoded><![CDATA[<p>Welcome to Enegel Changelog !</p>]]></content:encoded>
