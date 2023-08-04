@@ -4,5 +4,5 @@ sidebar_position: 3
 
 # Jobs
 
-TODO
+Executing a Job runs one or more Scenarios, generating a report that can be viewed in the 'Results' tab.
 
