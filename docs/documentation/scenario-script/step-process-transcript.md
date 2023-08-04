@@ -4,7 +4,7 @@ sidebar_position: 1
 
 # Process Transcript
 
-This step loads and processes conversations Transcripts in JSON format.
+This step converts Conversation Transcripts from TEXT format to JSON format, which is a required format for subsequent analysis steps.
 
 Following is the supported JSON format:
 
