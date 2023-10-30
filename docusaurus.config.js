@@ -76,7 +76,7 @@ const config = {
             position: 'left',
             label: 'Get Started',
           },
-          {to: '/docs/category/tutorials', label: 'Tutorials', position: 'left'},
+          // {to: '/docs/category/tutorials', label: 'Tutorials', position: 'left'},
           {to: '/docs/category/documentation', label: 'Documentation', position: 'left'},
           {to: '/blog', label: 'Changelog', position: 'left'},
           {
@@ -96,10 +96,10 @@ const config = {
                 label: 'Get Started',
                 to: '/docs/getting-started',
               },
-              {
+              /*{
                 label: 'Tutorials',
                 to: '/docs/category/tutorials',
-              },
+              },*/
               {
                 label: 'Documentation',
                 to: '/docs/category/documentation',

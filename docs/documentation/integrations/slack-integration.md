@@ -61,5 +61,7 @@ In Bot Settings, select Slack Channel you would like Bot to send messages to.
 
 ![Slack Bot Settings](./assets/s4.png)
 
+## Slack App approval
 
+It is safe to use Enegel Slack App. We follow all the recommendations and guidelines provided by Slack. At the moment,the Slack Worspace notes that Enegel application is not yet approved by Slack. The approval process takes time and we have been working on it. 
 
