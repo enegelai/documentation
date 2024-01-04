@@ -5,7 +5,7 @@ sidebar_position: 1
 # Managing Users
 To start using enegel.ai application, it is required to add users.
 
-### Adding the first admin user
+## Adding the first admin user
 Select one user with the administrative privileges and provide Enegel.ai with full name and email address for that user. The user will receive email invitation to setup the password. After that this user will be able to log in https://app.enegel.ai/ and continue adding other users
 
 ## Types of users
