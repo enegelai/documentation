@@ -18,11 +18,11 @@ It is important to select the time period for the analysis. The selected time pe
 
 Click on it to select a new time perid. Then select between predefined periods such as **Last 30 days** 
 
-![Time](./assets/voc-quick.png)
+![Time](./assets/voc-time-quick.png)
 
 or create a custom time interval.
 
-![Time](./assets/voc-custom.png)
+![Time](./assets/voc-time-custom.png)
 
 ## Voice Of Customer 
 
