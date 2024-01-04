@@ -7,7 +7,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'Enegel.AI',
-  tagline: 'Generative AI Powered Continuous CX Improvement',
+  tagline: 'Delivering Great Customer Experience Assured by Generative AI',
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
@@ -78,12 +78,12 @@ const config = {
           },
           // {to: '/docs/category/tutorials', label: 'Tutorials', position: 'left'},
           {to: '/docs/category/documentation', label: 'Documentation', position: 'left'},
-          {to: '/blog', label: 'Changelog', position: 'left'},
-          {
+          // {to: '/blog', label: 'Changelog', position: 'left'},
+          /* {
             href: 'https://github.com/enegelai/documentation',
             label: 'GitHub',
             position: 'right',
-          },
+          }, */
         ],
       },
       footer: {
@@ -92,10 +92,10 @@ const config = {
           {
             title: 'Docs',
             items: [
-              {
+              /*{
                 label: 'Get Started',
                 to: '/docs/getting-started',
-              },
+              },*/
               /*{
                 label: 'Tutorials',
                 to: '/docs/category/tutorials',
@@ -131,10 +131,10 @@ const config = {
                 label: 'Blog',
                 href: 'https://www.enegel.ai/blog',
               },
-              {
+              /*{
                 label: 'GitHub',
                 href: 'https://github.com/enegelai/documentation',
-              },
+              },*/
             ],
           },
         ],
