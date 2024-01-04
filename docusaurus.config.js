@@ -70,12 +70,12 @@ const config = {
           src: 'img/logo.svg',
         },
         items: [
-          {
+          /*{
             type: 'docSidebar',
             sidebarId: 'docsSidebar',
             position: 'left',
             label: 'Get Started',
-          },
+          },*/
           // {to: '/docs/category/tutorials', label: 'Tutorials', position: 'left'},
           {to: '/docs/category/documentation', label: 'Documentation', position: 'left'},
           // {to: '/blog', label: 'Changelog', position: 'left'},
