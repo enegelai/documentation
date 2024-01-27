@@ -1,8 +1,8 @@
 ---
-sidebar_position: 1
+sidebar_position: 2
 ---
 
-# Autpomatic Quality Assurance Reports 
+# Automatic Quality Assurance Reports 
 
 If you want to print an Automatic Quality Assurance report, click the Print icon in the upper right corner of the page. 
 
