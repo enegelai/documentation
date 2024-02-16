@@ -31,16 +31,19 @@ Here is an example embed code you would need to add to your website to enable Bo
 You can pass the following parameters to Bot Widget:
 
 
-| Name            | Description                            |
-|-----------------|----------------------------------------|
-| name            | Bot Name. Will be shown in Bot Header. |
-| url             | Enegel.ai Bot Service URL.             |
-| org-id          | Your Enegel.ai Org ID                  |
-| bot-id          | ID of your bot.                        |
-| logo-svg        | Your Logo icon (svg)                   |
-| bot-icon-svg    | Icon to use for messages from Bot      |
-| user-icon-svg   | Icon to use for messages from User     |
-| system-icon-svg | Icon to use for system messages        |
+| Name                  | Description                                                                                         |
+|-----------------------|-----------------------------------------------------------------------------------------------------|
+| name                  | Bot Name. Will be shown in Bot Header.                                                              |
+| url                   | Enegel.ai Bot Service URL.                                                                          |
+| org-id                | Your Enegel.ai Org ID                                                                               |
+| bot-id                | ID of your bot.                                                                                     |
+| logo-svg              | Your Logo icon (svg)                                                                                |
+| logo-url              | Your Logo URL. Use either `logo-svg`, or `logo-url`.                                                |
+| bot-icon-svg          | Icon to use for messages from Bot                                                                   |
+| user-icon-svg         | Icon to use for messages from User                                                                  |
+| system-icon-svg       | Icon to use for system messages                                                                     |
+| always-open           | Keep bot UI always open                                                                             |
+| prefilled-form-fields | Prefilled form field values. Serialized JSON. See [Pre-filled Form Values](#pre-filled-form-values) |
 
 Here is an example how to customize logo:
 
@@ -113,4 +116,99 @@ Here is an example how to use CSS variables:
 </enegelai-bot>
 <!-- Enegel.ai bot widget end -->
 ```
+
+## Pre-filled Form Fields Values
+
+Bot may show a form to collect data from the user. For example, to collect contact information, such as name, email and phone number. 
+
+At the same time, these values may already be known in the web application, for example, in case when user is already authenticated. 
+It would be redundant to ask user to enter this data again in the bot. 
+
+For such situations, Bot provides possibility to specify pre-filled values for the form fields. 
+You may do so by passing values in a Bot attribute `prefilled-form-fields` or by calling method `setPrefilledFormFields`
+
+:::info
+When pre-filled form field values are provided, Bot will still show the form, initially filled with these values. 
+This allows user to double-check that the information is correct, and make any adjustments if necessary before submitting the form.   
+:::
+
+Pre-filled form fields should be an object, where keys are form field names, and values are form field values. 
+For example:
+```javascript
+const prefilledFields = {
+  name:'John Smith',
+  email:'john.smith@gmail.com',
+  phone:'1-415-1112233'
+}
+```
+
+### Set pre-filled form fields via attribute value
+
+Set value of the Bot widget attribute `prefilled-form-fields` to JSON representation of the object with form fields:
+
+```html
+<enegelai-bot
+    name="Your Bot Name"
+    url="<bot service url>"
+    org-id="<your org id>"
+    bot-id="<bot id>"
+    prefilled-form-fields='{"name":"John Smith","email":"john.smith@gmail.com","phone":"1-415-1112233"}'
+>
+</enegelai-bot>
+
+```
+
+:::info
+The value of the attribute must be properly formatted JSON.
+:::
+
+
+### Set pre-filled form fields using method call
+
+You may need to make an API call to your backend to get the data for pre-filled form fields.
+For these cases, use method `setPrefilledFormFields` to set the data when it becomes available. 
+
+```html
+<script>
+    window.addEventListener('load', () => {
+        const chatBot = document.querySelector('enegelai-bot');
+        chatBot.setPrefilledFormFields({
+            name: 'John Smith',
+            email: 'john.smith@gmail.com',
+            phone: '1-415-1112233'
+        });
+    });
+</script>
+```
+
+### Full example 
+
+Here is a full example setting pre-filled form fields using data from URL query string
+
+```html
+    <!-- Enegel.ai bot widget begin -->
+    <link href="https://unpkg.com/@enegelai/bot-widget/dist/enegelaibot.css" rel="stylesheet">
+    <script src="https://unpkg.com/@enegelai/bot-widget/dist/enegelaibot.umd.js" type="text/javascript" async></script>
+    <script>
+        (function() {
+            let el = document.createElement('enegelai-bot');
+            el.setAttribute('name', '');
+            el.setAttribute('url', '<service URL>');
+            el.setAttribute('org-id', '<your Org Id>');
+            el.setAttribute('bot-id', '<your Bot Id>');
+            // Set prefilled form fields using values from query string
+            const searchParams = new URLSearchParams(window.location.search);
+            const prefilledFormFields = {
+                name: searchParams.get('name') || '',
+                email: searchParams.get('email') || '',
+                phoneNumber: searchParams.get('phoneNumber') || '',
+            };
+            el.setAttribute('prefilled-form-fields', JSON.stringify(prefilledFormFields));
+            document.body.appendChild(el);
+        })();
+    </script>
+    <!-- Enegel.ai bot widget end -->
+```
+
+
 
