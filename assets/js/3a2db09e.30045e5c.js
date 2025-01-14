@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunk_enegelai_documentation=self.webpackChunk_enegelai_documentation||[]).push([[8121],{8070:e=>{e.exports=JSON.parse('{"tags":[{"label":"hello","permalink":"/blog/tags/hello","count":1}]}')}}]);
