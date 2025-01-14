@@ -4,7 +4,7 @@ sidebar_position: 1
 
 # Enable Bot on your Website
 
-To enable Enegel.ai Bot on your WebSite, we provide Bot Widget that can be quickly added to your site. 
+To enable Crescendo.ai Bot on your WebSite, we provide Bot Widget that can be quickly added to your site. 
 You can use simple embed code to enable Bot. You can also customize appearance of the bot widget, by passing parameters and configuring CSS variables.
 
 
@@ -73,20 +73,23 @@ You can use CSS variables to customize appearance of certain elements of the Bot
 Here is the list of supported CSS variables:
 
 
-| Name                                     | Description                                |
-|------------------------------------------|--------------------------------------------|
-| --enegelai-bot-header-color              | Header color                               |
-| --enegelai-bot-header-background         | Header background color                    |
-| --enegelai-bot-message-bot-color         | Bot message color                          |
-| --enegelai-bot-message-bot-background    | Bot message background color               |
-| --enegelai-bot-message-user-color        | User message color                         |
-| --enegelai-bot-message-user-background   | User message background color              |
-| --enegelai-bot-message-system-color      | System message color                       |
-| --enegelai-bot-message-system-background | System message background color            |
-| --enegelai-bot-popup-color               | Engage popup message text color            |
-| --enegelai-bot-popup-background          | Engage popup message background color      |
-| --enegelai-bot-popup-logo-color          | Logo color on Engage popup message         |
-| --enegelai-bot-popup-close-color         | Close button color on Engage popup message |
+| Name                                     | Description                                                                     |
+|------------------------------------------|---------------------------------------------------------------------------------|
+| --enegelai-bot-max-height                | Max height Bot widget can take, i.e. 100vh - full height                        |
+| --enegelai-bot-height-top-margin         | Margin from the top of the screen (i.e. 200px) - regular screen size            |
+| --enegelai-bot-height-top-margin-sm      | Margin from the top of the screen (i.e. 100px) - small screen size - for mobile |
+| --enegelai-bot-header-color              | Header color                                                                    |
+| --enegelai-bot-header-background         | Header background color                                                         |
+| --enegelai-bot-message-bot-color         | Bot message color                                                               |
+| --enegelai-bot-message-bot-background    | Bot message background color                                                    |
+| --enegelai-bot-message-user-color        | User message color                                                              |
+| --enegelai-bot-message-user-background   | User message background color                                                   |
+| --enegelai-bot-message-system-color      | System message color                                                            |
+| --enegelai-bot-message-system-background | System message background color                                                 |
+| --enegelai-bot-popup-color               | Engage popup message text color                                                 |
+| --enegelai-bot-popup-background          | Engage popup message background color                                           |
+| --enegelai-bot-popup-logo-color          | Logo color on Engage popup message                                              |
+| --enegelai-bot-popup-close-color         | Close button color on Engage popup message                                      |
 
 
 Here is an example how to use CSS variables:
@@ -210,5 +213,116 @@ Here is a full example setting pre-filled form fields using data from URL query 
     <!-- Enegel.ai bot widget end -->
 ```
 
+## Bot Widget Javascript API
+
+You can call Bot Widget methods from your Javascript code to control Bot Widget programmatically.
+
+### `setOpen`
+
+Allows you to open or close the Bot Widget programmatically.
+
+#### Parameters
+
+- `state` (boolean): Pass `true` to open the Bot Widget, or `false` to close it.
+
+#### Example
+
+```javascript
+function onBotOpen() {
+  const chatBot = document.querySelector('enegelai-bot');
+  if (chatBot) {
+    chatBot.setOpen(true);
+  }
+}
+``` 
+
+### `getOpen`
+
+Returns current Bot Widget open state. Returns `true` if Bot Widget is open, and `false` if it is closed.
+
+#### Example
+
+```javascript
+function onBotOpen() {
+  const chatBot = document.querySelector('enegelai-bot');
+  if (chatBot) {
+    const openState = chatBot.getOpen();
+  }
+}
+``` 
+
+### `toggleOpen`
+
+Toggles Bot Widget open state. Opens it if it closed, closes it if it is open.
+
+#### Example
+
+```javascript
+function onBotOpen() {
+  const chatBot = document.querySelector('enegelai-bot');
+  if (chatBot) {
+    chatBot.toggleOpen();
+  }
+}
+``` 
 
 
+### `setPrefilledFormFields`
+
+Allows you to pre-fill form fields values programmatically, for example, when they are known in advance, or retrieved from your backend.
+
+#### Parameters
+
+- `data` (object): Object with form field names as keys, and form field values as values.
+
+#### Example
+
+```javascript
+window.addEventListener('load', () => {
+    const chatBot = document.querySelector('enegelai-bot');
+    if (chatBot) {
+        chatBot.setPrefilledFormFields({
+            name: 'John Smith',
+            email: 'john.smith@gmail.com',
+            phone: '1-415-1112233'
+        });
+    }
+});
+``` 
+
+### `clearConversation`
+
+Clears current Bot conversation and starts new one.
+
+#### Example
+
+```javascript    
+function onClearConversation() {
+    const chatBot = document.querySelector('enegelai-bot');
+    if(chatBot) {
+        chatBot.clearConversation();
+    }
+}
+```
+
+
+### `setInputValue`
+
+Allows you to set the value of the input field in the Bot Widget.
+You can use this method to set suggested message in the bot input field, 
+for example, based on how user navigates on your website.
+
+#### Parameters
+
+- `value` (string): Text to set as value of input field. Pass empty string as value to clear the input field.
+
+#### Example
+
+```javascript    
+function onSetInputValue() {
+    const chatBot = document.querySelector('enegelai-bot');
+    if(chatBot) {
+        chatBot.setInputValue('Suggested Message Text');
+    }
+}
+```
