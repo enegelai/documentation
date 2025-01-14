@@ -16,8 +16,6 @@ This capability is useful when several different types of conversatons are analy
 
 It is required to create a KPI collection: Data/
 
-![KPI Collection](./assets/kpi-collection-content.png)
-
 To create a new KPI collection press "New" button and enter the fields describing the KPI collection. 
 
 ![KPI Collection fields] (./assets/kpi-collection-fields.png)
