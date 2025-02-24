@@ -34,8 +34,8 @@ You can pass the following parameters to Bot Widget:
 | Name                  | Description                                                                                         |
 |-----------------------|-----------------------------------------------------------------------------------------------------|
 | name                  | Bot Name. Will be shown in Bot Header.                                                              |
-| url                   | Enegel.ai Bot Service URL.                                                                          |
-| org-id                | Your Enegel.ai Org ID                                                                               |
+| url                   | Bot Service URL.                                                                                    |
+| org-id                | Your Org ID.                                                                                        |
 | bot-id                | ID of your bot.                                                                                     |
 | logo-svg              | Your Logo icon (svg)                                                                                |
 | logo-url              | Your Logo URL. Use either `logo-svg`, or `logo-url`.                                                |
@@ -73,23 +73,25 @@ You can use CSS variables to customize appearance of certain elements of the Bot
 Here is the list of supported CSS variables:
 
 
-| Name                                     | Description                                                                     |
-|------------------------------------------|---------------------------------------------------------------------------------|
-| --enegelai-bot-max-height                | Max height Bot widget can take, i.e. 100vh - full height                        |
-| --enegelai-bot-height-top-margin         | Margin from the top of the screen (i.e. 200px) - regular screen size            |
-| --enegelai-bot-height-top-margin-sm      | Margin from the top of the screen (i.e. 100px) - small screen size - for mobile |
-| --enegelai-bot-header-color              | Header color                                                                    |
-| --enegelai-bot-header-background         | Header background color                                                         |
-| --enegelai-bot-message-bot-color         | Bot message color                                                               |
-| --enegelai-bot-message-bot-background    | Bot message background color                                                    |
-| --enegelai-bot-message-user-color        | User message color                                                              |
-| --enegelai-bot-message-user-background   | User message background color                                                   |
-| --enegelai-bot-message-system-color      | System message color                                                            |
-| --enegelai-bot-message-system-background | System message background color                                                 |
-| --enegelai-bot-popup-color               | Engage popup message text color                                                 |
-| --enegelai-bot-popup-background          | Engage popup message background color                                           |
-| --enegelai-bot-popup-logo-color          | Logo color on Engage popup message                                              |
-| --enegelai-bot-popup-close-color         | Close button color on Engage popup message                                      |
+| Name                                      | Description                                                                                                                                                     |
+|-------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| --enegelai-bot-max-height                 | Max height Bot widget can take, i.e. 100vh - full height                                                                                                        |
+| --enegelai-bot-height-top-margin          | Margin from the top of the screen (i.e. 200px) - regular screen size                                                                                            |
+| --enegelai-bot-height-top-margin-sm       | Margin from the top of the screen (i.e. 100px) - small screen size - for mobile                                                                                 |
+| --enegelai-bot-header-color               | Header color                                                                                                                                                    |
+| --enegelai-bot-header-background          | Header background color                                                                                                                                         |
+| --enegelai-bot-message-bot-color          | Bot message color                                                                                                                                               |
+| --enegelai-bot-message-bot-background     | Bot message background color                                                                                                                                    |
+| --enegelai-bot-message-user-color         | User message color                                                                                                                                              |
+| --enegelai-bot-message-user-background    | User message background color                                                                                                                                   |
+| --enegelai-bot-message-system-color       | System message color                                                                                                                                            |
+| --enegelai-bot-message-system-background  | System message background color                                                                                                                                 |
+| --enegelai-bot-popup-color                | Engage popup message text color                                                                                                                                 |
+| --enegelai-bot-popup-background           | Engage popup message background color                                                                                                                           |
+| --enegelai-bot-popup-logo-color           | Logo color on Engage popup message                                                                                                                              |
+| --enegelai-bot-popup-close-color          | Close button color on Engage popup message                                                                                                                      |
+| --enegelai-bot-anchor-popup-position      | Position of popup message relative to anchor button (top,top-start,top-end,bottom,bottom-start,bottom-end,right,right-start,right-end,left,left-start,left-end) | 
+| --enegelai-bot-user-message-avatar-position | User message avatar position (right,left)                                                                                                                     |
 
 
 Here is an example how to use CSS variables:
@@ -211,6 +213,35 @@ Here is a full example setting pre-filled form fields using data from URL query 
         })();
     </script>
     <!-- Enegel.ai bot widget end -->
+```
+
+## Anchor button
+
+### Position Anchor button
+
+You may position Bot Widget Anchor button anywhere on the screen, using css.  
+For example:
+
+```css
+    enegelai-bot::part(anchor){
+        position: fixed;
+        right: 25px;
+        top: 25px;
+    }
+```
+
+If you change default position of the anchor button, you may also need to adjust position of the popup message relative to the anchor button.
+For this, set appropriate value for `--enegelai-bot-anchor-popup-position` CSS variable.
+
+### Hide Anchor button 
+
+Sometimes you may need to hide anchor button, for example when Bot Widget should always stay open. 
+It's possible to do by adding this to style:
+
+```css
+    enegelai-bot::part(anchor) {
+        display: none;
+    }
 ```
 
 ## Bot Widget Javascript API
