@@ -357,3 +357,31 @@ function onSetInputValue() {
     }
 }
 ```
+
+### `setContext`
+
+Allows you to pass information about user to the Bot, so Bot can use this information in answers.
+You can use this method to pass information like user name, what is user currently looking at one the website (e.g., current product page), 
+or any other information that may be useful for the Bot to provide better answers.
+
+#### Parameters
+
+- `data` (object): Javascript object with data. Give keys self-explanatory names, so the Bot can understand better what information this is and how it can be used.
+
+#### Example
+
+```javascript    
+  window.addEventListener('load', () => {
+    chatBot = document.querySelector('enegelai-bot');
+
+    // Set context
+    chatBot.setContext({
+        UserName: 'John Smith',
+        UserSubscriptionLevel: 'Premium',
+        CurrentProduct: {
+            name: '<product name>',
+            description: '<product description>',
+        }
+    });
+  });
+```
