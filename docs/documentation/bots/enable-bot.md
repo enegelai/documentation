@@ -415,7 +415,7 @@ Event "c7o:bot:open" is emitted when user opens the bot widget.
 
 ### `c7o:bot:close`
 
-Event "c7o:bot:open" is emitted when user closes the bot widget.
+Event "c7o:bot:close" is emitted when user closes the bot widget.
 
 ### `c7o:bot:formSubmit`
 
