@@ -385,3 +385,126 @@ or any other information that may be useful for the Bot to provide better answer
     });
   });
 ```
+
+## Bot Widget Events
+
+You can subscribe to the events Bot Widget emits during chat processing. This can be useful to track bot conversation state and user activities in the bot widget.
+You can also use information from the Bot Widget events to send data to your backend for further processing.
+
+### `c7o:bot:conversationStart`
+
+Event "c7o:bot:conversationStart" is emitted when user starts conversation with the bot by sending the first message.
+Expect object with the following information in the event.detail:
+
+```json
+{
+    "conversationId": "66kheifsn0",
+    "timestamp": 1750411316902,
+    "author": "user",
+    "type": "text",
+    "data": {
+        "text": "hello"
+    },
+    "id": "r80ftm4p4i"
+}
+```
+
+### `c7o:bot:open`
+
+Event "c7o:bot:open" is emitted when user opens the bot widget.
+
+### `c7o:bot:close`
+
+Event "c7o:bot:open" is emitted when user closes the bot widget.
+
+### `c7o:bot:formSubmit`
+
+Event "c7o:bot:formSubmit" is emitted when user submits the form with contact information before being connected to the agent.
+Expect object with form data in the event.detail:
+
+```json
+{
+  "conversationId": "66kheifsn0",
+  "formData": {
+      "name": "John Smith",
+      "email": "john.smith@gmail.com"
+  }
+}
+```
+
+
+### Example  
+
+```html
+<script>
+
+    function subscribeToBotEvents(){
+        const chatBotElement = document.querySelector('enegelai-bot');
+
+        // Event "c7o:bot:conversationStart" is emitted when user sends the first message in the conversation
+        chatBotElement.addEventListener('c7o:bot:conversationStart',(event)=>{
+            /* Expect object with the following information in the event.detail:
+                {
+                    "conversationId": "66kheifsn0",
+                    "timestamp": 1750411316902,
+                    "author": "user",
+                    "type": "text",
+                    "data": {
+                        "text": "hello"
+                    },
+                    "id": "r80ftm4p4i"
+                }
+            */
+            console.log(`Bot Event: c7o:bot:conversationStart`,event.detail);
+            // Store information that bot conversation was started (to check when navigated to other pages)
+            localStorage.setItem("c7o_bot_conversation_started", Date.now());
+        });
+
+        // Event "c7o:bot:open" is emitted when user opens the bot
+        chatBotElement.addEventListener('c7o:bot:open',(event)=>{
+            console.log(`Bot Event: c7o:bot:open`);
+        });
+
+        // Event "c7o:bot:open" is emitted when user closes the bot
+        chatBotElement.addEventListener('c7o:bot:close',(event)=>{
+            console.log(`Bot Event: c7o:bot:close`);
+        });
+
+        // Event "c7o:bot:formSubmit" is emitted when user submits the form
+        chatBotElement.addEventListener('c7o:bot:formSubmit',(event)=>{
+            /* Expect object with form data in the event.detail:
+                {
+                  "conversationId": "66kheifsn0",
+                  "formData": {
+                      "name": "John Smith",
+                      "email": "john.smith@gmail.com"
+                  }
+                }
+            */
+            console.log(`Bot Event: c7o:bot:formSubmit`,event.detail);
+        });
+    }
+
+    window.addEventListener('load', () => {
+        const chatBot = document.querySelector('enegelai-bot');
+        if(!chatBot){
+            return; // Bot not created
+        }
+        subscribeToBotEvents();
+        const clearConvBtn = document.querySelector('#clearConv');
+        if(!clearConvBtn){
+            return; // Button not found
+        }
+        clearConvBtn.addEventListener('click', (e) => {
+            console.log('Clear conversation clicked');
+            chatBot.clearConversation();
+            localStorage.removeItem("c7o_bot_conversation_started");
+        });
+    });
+</script>
+
+```
+
+
+
+
