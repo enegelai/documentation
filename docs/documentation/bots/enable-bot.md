@@ -69,6 +69,27 @@ Here is an example how to customize logo:
 <!-- Enegel.ai bot widget end -->
 ```
 
+Here is an example of how to customize the popup logo:
+
+```html
+    <!-- Enegel.ai bot widget begin -->
+    <link href="https://unpkg.com/@enegelai/bot-widget/dist/enegelaibot.css" rel="stylesheet">
+    <script src="https://unpkg.com/@enegelai/bot-widget/dist/enegelaibot.umd.js" type="text/javascript" async></script>
+    <script>
+        (function() {
+            let el = document.createElement('enegelai-bot');
+            el.setAttribute('name', '');
+            el.setAttribute('url', '<service URL>');
+            el.setAttribute('org-id', '<your Org Id>');
+            el.setAttribute('bot-id', '<your Bot Id>');
+            // In this example we will use the 'popup-logo-svg', alternatively you can use 'popup-logo-url' with a link to your logo
+            el.setAttribute('popup-logo-svg', '<svg height="20px" viewBox="0 0 140 40" fill="none" xmlns="http://www.w3.org/2000/svg"><title>Crescendo Logo</title><text x="0" y="30" font-family="Arial, sans-serif" font-weight="bold" font-size="25" fill="#6927da">crescendo</text></svg>');
+            document.body.appendChild(el);
+        })();
+    </script>
+    <!-- Enegel.ai bot widget end -->
+```
+
 ## Customizing appearance
 
 You can use CSS variables to customize appearance of certain elements of the Bot Widget.
