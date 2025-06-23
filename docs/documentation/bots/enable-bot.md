@@ -39,6 +39,8 @@ You can pass the following parameters to Bot Widget:
 | bot-id                | ID of your bot.                                                                                     |
 | logo-svg              | Your Logo icon (svg)                                                                                |
 | logo-url              | Your Logo URL. Use either `logo-svg`, or `logo-url`.                                                |
+| popup-logo-svg        | The Logo used for the widget popup (do not use with popup-logo-url)                                 |
+| popup-logo-url        | The Logo used for the widget popup (do not use with popup-logo-svg)                                 |
 | bot-icon-svg          | Icon to use for messages from Bot                                                                   |
 | user-icon-svg         | Icon to use for messages from User                                                                  |
 | system-icon-svg       | Icon to use for system messages                                                                     |
