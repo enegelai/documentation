@@ -61,17 +61,17 @@ Absolutely—here’s the **clean, link-free version**, formatted plainly so you
 First, you need to create two jobs in the system.
 
 Navigate to the Jobs Settings page under https://app.enegel.ai/settings/jobs/list
-<img width="1600" height="1000" alt="Two_jobs" src="https://github.com/user-attachments/assets/cbb03b4a-bea7-4672-a8d6-ea25bac1133f" />
+<img alt="Two_jobs" src="https://github.com/user-attachments/assets/cbb03b4a-bea7-4672-a8d6-ea25bac1133f" />
 
 ### Ticket QA Ingest Job
 This job will be responsible for evaluating the quality of tickets.
 
-<img width="1600" height="1000" alt="QA_job" src="https://github.com/user-attachments/assets/2879efd1-a99b-420b-841a-b43c82d8d760" />
+<img alt="QA_job" src="https://github.com/user-attachments/assets/2879efd1-a99b-420b-841a-b43c82d8d760" />
 
 ### Ticket Ingest Job
 This job will handle ticket ingestion into the system.
 
-<img width="1600" height="1000" alt="Ingest_job" src="https://github.com/user-attachments/assets/d51cb944-cffb-4fe1-96e5-01e5017a7432" />
+<img alt="Ingest_job" src="https://github.com/user-attachments/assets/d51cb944-cffb-4fe1-96e5-01e5017a7432" />
 
 ---
 
@@ -81,7 +81,7 @@ Once the jobs are created, assign them in the Advanced Settings.
 
 Go to the Advanced Settings page and select the jobs you created in the relevant configuration fields under https://app.enegel.ai/settings/advanced
 
-<img width="1600" height="1000" alt="Assign_jobs" src="https://github.com/user-attachments/assets/96b037b4-6192-43bd-a443-31ad488bc60f" />
+<img alt="Assign_jobs" src="https://github.com/user-attachments/assets/96b037b4-6192-43bd-a443-31ad488bc60f" />
 
 ---
 
