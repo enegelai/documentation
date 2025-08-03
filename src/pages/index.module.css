@@ -21,3 +21,87 @@
   align-items: center;
   justify-content: center;
 }
+
+/* ─── hero wrapper ───────────────────────────────────────── */
+.hero {
+  height: 100vh;                 /* full-screen section            */
+  background: var(--ifm-background-color);
+  display: flex;
+  align-items: center;           /* vertical centring               */
+}
+
+/* ─── inner grid (two columns) ───────────────────────────── */
+.inner {
+  max-width: 80%;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  display: flex;
+  gap: 4rem;
+  width: 100%;
+}
+
+/* ─── left column (text) ─────────────────────────────────── */
+.copy {
+  flex: 1 1 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.title {
+  font-size: clamp(3rem, 6vw, 4.5rem);
+  font-weight: 900;
+  line-height: 1.1;
+  margin: 0;
+}
+
+.subtitle {
+  font-size: 1.25rem;
+  margin: 1.5rem 0 2.5rem;
+  color: var(--ifm-color-gray-700);
+}
+
+/* button styled to match screenshot */
+.cta {
+  background: #d6453d;
+  color: #fff;
+  border-radius: 9999px;
+  padding: 0.9rem 2.75rem;
+  font-size: 1.125rem;
+  transition: background 0.2s;
+  display: inline-flex;      /* ‼ keeps the button only as wide as its content */
+  align-self: flex-start;    /* prevents it from stretching inside flex column */
+}
+
+.cta:hover,
+.cta:focus {
+  background: #bd3b33;
+  color: #fff;
+}
+
+/* ─── right column (art) ─────────────────────────────────── */
+.art {
+  flex: 1 1 50%;
+  display: flex;
+  align-items: flex-end; /* sits on same baseline visually */
+  justify-content: center;
+}
+
+.image {
+  max-width: 100%;
+  height: auto;
+  filter: drop-shadow(0 8px 24px rgba(0, 0, 0, 0.08));
+  /* tweak shadow or width to taste */
+}
+
+/* ─── mobile tweaks ──────────────────────────────────────── */
+@media (max-width: 960px) {
+  .inner {
+    flex-direction: column;
+    text-align: center;
+    gap: 2rem;
+  }
+  .art {
+    order: -1;        /* illustration above copy on small screens */
+  }
+}

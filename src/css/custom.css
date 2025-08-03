@@ -28,3 +28,13 @@
   --ifm-color-primary-lightest: #4fddbf;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
+
+/* 2️⃣  centre every nav link vertically */
+.navbar__link {
+  display: flex;                     /* now it's a flex item…      */
+  align-items: center;               /* …and its text is centred   */
+  line-height: 1;                    /* prevent extra baseline gap */
+  font-size: 1.2rem;                 /* your larger font size      */
+  margin-top: 8px;              /* vertical centring          */
+}
+

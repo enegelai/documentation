@@ -1,0 +1,96 @@
+.footer {
+    --bg: #0f172a;          /* dark slate (match corporate site) */
+    --text: #ffffff;
+    background: rgb(30, 19, 49);
+    color: var(--text);
+    padding: 3rem 0 2rem;
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+.inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    display: grid;
+    gap: 2.5rem;
+    grid-template-columns: 260px 1fr;
+}
+
+.block {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.address,
+.contact {
+    margin: 0;
+}
+
+.social a {
+    display: inline-block;
+    margin-right: 0.75rem;
+}
+.social img {
+    width: 24px;
+    height: 24px;
+    opacity: 0.85;
+    transition: opacity 0.2s;
+}
+.social img:hover {
+    opacity: 1;
+}
+
+.links {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+}
+
+.links h5 {
+    font-size: 0.95rem;
+    margin: 0 0 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+}
+
+.links ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.links li {
+    margin: 0.35rem 0;
+}
+
+.links a {
+    color: var(--text);
+    opacity: 0.85;
+    text-decoration: none;
+    transition: opacity 0.2s;
+}
+.links a:hover {
+    opacity: 1;
+    text-decoration: underline;
+}
+
+.copy {
+    text-align: center;
+    margin-top: 2.5rem;
+    font-size: 0.8rem;
+    opacity: 0.75;
+}
+
+.logo {
+    width: 170px;         /* adjust to taste */
+    height: auto;
+    margin-bottom: 1.25rem;
+}
+/* ─── responsive tweaks ───────────────────────────────────── */
+@media (max-width: 768px) {
+    .inner {
+        grid-template-columns: 1fr;
+    }
+}

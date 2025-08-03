@@ -4,8 +4,8 @@ import {themes as prismThemes} from 'prism-react-renderer';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Enegel.AI',
-  tagline: 'Delivering Great Customer Experience Assured by Generative AI',
+  title: 'Better CX is powered by Augmented AI',
+  tagline: 'Crescendo provides the world\'s first all-included service of AI technology and CX experts that increases customer engagement while reducing costs.\n',
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
@@ -60,12 +60,12 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       // Replace with your project's social card
-      image: 'img/docusaurus-social-card.jpg',
+      image: 'img/crescendo-hero3.png',
       navbar: {
-        title: 'enegel.ai',
+        title: '',
         logo: {
-          alt: 'My Site Logo',
-          src: 'img/logo.svg',
+          alt: 'crescendo.ai',
+          src: 'img/crescendo_logo_purple.svg',
         },
         items: [
           /*{
@@ -83,60 +83,6 @@ const config = {
             position: 'right',
           }, */
         ],
-      },
-      footer: {
-        style: 'dark',
-        links: [
-          {
-            title: 'Docs',
-            items: [
-              /*{
-                label: 'Get Started',
-                to: '/docs/getting-started',
-              },*/
-              /*{
-                label: 'Tutorials',
-                to: '/docs/category/tutorials',
-              },*/
-              {
-                label: 'Documentation',
-                to: '/docs/category/documentation',
-              },
-            ],
-          },
-            /*
-          {
-            title: 'Community',
-            items: [
-              {
-                label: 'Stack Overflow',
-                href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-              },
-              {
-                label: 'Discord',
-                href: 'https://discordapp.com/invite/docusaurus',
-              },
-              {
-                label: 'Twitter',
-                href: 'https://twitter.com/docusaurus',
-              },
-            ],
-          }, */
-          {
-            title: 'More',
-            items: [
-              {
-                label: 'Blog',
-                href: 'https://www.enegel.ai/blog',
-              },
-              /*{
-                label: 'GitHub',
-                href: 'https://github.com/enegelai/documentation',
-              },*/
-            ],
-          },
-        ],
-        copyright: `Copyright © 2022-present Enegel LLC. All rights reserved.`,
       },
       prism: {
         theme: prismThemes.github,
