@@ -3,6 +3,7 @@ import Link from '@docusaurus/Link';
 import clsx from 'clsx';
 import styles from './styles.module.css';
 import CrescendoLogo from '@site/static/img/crescendo_logo_white.svg';
+import BotWidget from '@site/src/components/BotWidget';
 
 /** Small helper so we can mix internal/external links easily */
 const FLink = ({ href, children, external }) =>
@@ -116,6 +117,7 @@ export default function Footer() {
             <div className={styles.copy}>
                 © {new Date().getFullYear()} Crescendo. All rights reserved.
             </div>
+            <BotWidget/>
         </footer>
     );
 }

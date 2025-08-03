@@ -89,6 +89,31 @@ const config = {
         darkTheme: prismThemes.dracula,
       },
     }),
+  /* append a one-line plugin that mutates Webpack devServer ─── */
+  plugins: [
+    /** Webpack-dev-server overlay suppressor (dev only) */
+    function suppressOverlayPlugin() {
+      return {
+        name: 'webpack-overlay-suppressor',
+        /** tweak only the client bundle during `npm run start` */
+        configureWebpack(_, isServer) {
+          if (isServer) return {};          // skip the SSR bundle
+
+          return {
+            devServer: {
+              client: {
+                overlay: {
+                  errors: true,        // keep critical build errors
+                  warnings: false,     // hide warnings
+                  runtimeErrors: false // hide ResizeObserver etc.
+                },
+              },
+            },
+          };
+        },
+      };
+    },
+  ],
 };
 
 module.exports = config;
